@@ -7,7 +7,7 @@ react-dynamic-form allows you to create forms base on data models and control th
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DynamicForm from 'react-dynamic-form';
+import DynamicForm from 'witch-dynamic-form';
 
 class App extends React.Component {
 
