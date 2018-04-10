@@ -17,8 +17,10 @@ export default class DynamicForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    if (this.props.onFormSubmit) this.props.onFormSubmit(this.state);
+    if (this.props.onFormSubmit) this.props.onFormSubmit(this.state, this.references);
   }
+  
+  references = [];
 
   render() {
     return (
@@ -27,6 +29,7 @@ export default class DynamicForm extends React.Component {
           <div key={inputItem.name} className="form-group">
             <label>{inputItem.name}</label>
             <input
+              ref={node => {this.references[inputItem.name] = node}}
               type={inputItem.type}
               name={inputItem.name}
               onChange={this.onInputChange}

@@ -28,6 +28,8 @@ var DynamicForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DynamicForm.__proto__ || Object.getPrototypeOf(DynamicForm)).call(this, props));
 
+    _this.references = [];
+
     _this.state = {};
     _this.onInputChange = _this.onInputChange.bind(_this);
     _this.onSubmit = _this.onSubmit.bind(_this);
@@ -44,7 +46,7 @@ var DynamicForm = function (_React$Component) {
     key: "onSubmit",
     value: function onSubmit(e) {
       e.preventDefault();
-      if (this.props.onFormSubmit) this.props.onFormSubmit(this.state);
+      if (this.props.onFormSubmit) this.props.onFormSubmit(this.state, this.references);
     }
   }, {
     key: "render",
@@ -64,6 +66,9 @@ var DynamicForm = function (_React$Component) {
               inputItem.name
             ),
             _react2.default.createElement("input", {
+              ref: function ref(node) {
+                _this2.references[inputItem.name] = node;
+              },
               type: inputItem.type,
               name: inputItem.name,
               onChange: _this2.onInputChange,
