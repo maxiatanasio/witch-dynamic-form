@@ -1,8 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import "./styles/DinamicForm.css";
 
-export default class DinamicForm extends React.Component {
+export default class DynamicForm extends React.Component {
   constructor(props) {
     super(props);
     this.setState({});
