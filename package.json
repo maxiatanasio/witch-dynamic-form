@@ -1,6 +1,6 @@
 {
   "name": "witch-dynamic-form",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Reactjs Component for the creation of Dynamic Forms",
   "keywords": ["reactjs","forms","react"],
   "main": "build/index.js",

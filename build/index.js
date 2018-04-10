@@ -28,7 +28,7 @@ var DynamicForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DynamicForm.__proto__ || Object.getPrototypeOf(DynamicForm)).call(this, props));
 
-    _this.setState({});
+    _this.state = {};
     _this.onInputChange = _this.onInputChange.bind(_this);
     _this.onSubmit = _this.onSubmit.bind(_this);
     return _this;
@@ -57,7 +57,7 @@ var DynamicForm = function (_React$Component) {
         this.props.model.map(function (inputItem) {
           return _react2.default.createElement(
             "div",
-            { "class": "form-group" },
+            { key: inputItem.name, className: "form-group" },
             _react2.default.createElement(
               "label",
               null,
@@ -73,7 +73,7 @@ var DynamicForm = function (_React$Component) {
         }),
         _react2.default.createElement(
           "div",
-          { "class": "form-group" },
+          { className: "form-group" },
           _react2.default.createElement(
             "button",
             null,

@@ -3,7 +3,7 @@ import React from "react";
 export default class DynamicForm extends React.Component {
   constructor(props) {
     super(props);
-    this.setState({});
+    this.state = {};
     this.onInputChange = this.onInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -24,7 +24,7 @@ export default class DynamicForm extends React.Component {
     return (
       <form onSubmit={this.onSubmit}>
         {this.props.model.map(inputItem => (
-          <div class="form-group">
+          <div key={inputItem.name} className="form-group">
             <label>{inputItem.name}</label>
             <input
               type={inputItem.type}
@@ -34,7 +34,7 @@ export default class DynamicForm extends React.Component {
             />
           </div>
         ))}
-        <div class="form-group">
+        <div className="form-group">
           <button>Confirm</button>
         </div>
       </form>
